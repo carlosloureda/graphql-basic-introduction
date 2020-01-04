@@ -1,0 +1,14 @@
+{
+  "name": "graphql-basic-introduction",
+  "version": "1.0.0",
+  "description": "A project to reflect some examples from an introductory post about GraphQL",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Carlos Loureda <carloslouredaparrado@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "graphql": "^14.5.8"
+  }
+}
