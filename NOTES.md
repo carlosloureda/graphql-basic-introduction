@@ -71,3 +71,41 @@ Seeing this results:
     }
 }
 ```
+
+# Query from Client
+
+_BRANCH: `query-from-client`_
+
+As now we have an API endpoint we can query this route with **curl** on the command line:
+
+```bash
+curl -X POST \
+-H "Content-Type: application/json" \
+-d '{"query": "{ hello }"}' \
+http://localhost:4000/graphql
+```
+
+But if you want to do it on Javascript we can create a `client.js` file to run the client code:
+
+```js
+const fetch = require("node-fetch");
+
+const BASE_URL = "http://localhost:4000";
+
+fetch("`${BASE_URL}/graphql", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+  },
+  body: JSON.stringify({ query: "{ hello }" })
+})
+  .then(r => r.json())
+  .then(data => console.log("data returned:", data));
+```
+
+You first need to install `node-fetch`:
+
+```bash
+npm i node-fetch --save
+```
